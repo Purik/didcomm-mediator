@@ -4,10 +4,10 @@ ARG VERSION='0.0'
 
 RUN apt-get update && \
   apt-get install -y coreutils nginx certbot netcat
-ENV LANG C.UTF-8
-ENV PYTHONUNBUFFERED 1
-ENV VERSION ${VERSION}
-
+ENV LANG=C.UTF-8
+ENV PYTHONUNBUFFERED=1
+ENV VERSION=${VERSION}
+SHELL ["/bin/bash", "-c"]
 
 # Copy project files and install dependencies
 ADD app /app
